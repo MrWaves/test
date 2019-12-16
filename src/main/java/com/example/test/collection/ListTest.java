@@ -1,6 +1,6 @@
 package com.example.test.collection;
 
-import com.example.test.java.StuDTO;
+import com.example.test.jdbc.StuDTO;
 
 import java.util.*;
 

@@ -1,7 +1,7 @@
 package com.example.test;
 
-import com.example.test.java.StuDao;
-import com.example.test.java.StuDTO;
+import com.example.test.jdbc.StuDao;
+import com.example.test.jdbc.StuDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

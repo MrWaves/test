@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SwitchTest {
     public static void main(String[] args) {
-        test2();
+        test1();
     }
 
     //test for switch break
@@ -20,7 +20,6 @@ public class SwitchTest {
                     break;
                 case 3:
                     System.out.println(i);
-                    break;
             }
         }
     }
@@ -44,7 +43,6 @@ public class SwitchTest {
                 break;
             case 5:
                 missingFiles.remove("回访记录表");
-                break;
         }
 
     }

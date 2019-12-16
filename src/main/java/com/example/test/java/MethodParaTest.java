@@ -1,6 +1,6 @@
 package com.example.test.java;
 
-import com.example.test.java.StuDTO;
+import com.example.test.jdbc.StuDTO;
 
 /**
  * @Package: com.example.test

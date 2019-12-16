@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ArraysTest {
     public static void main(String[] args) {
-        test2();
+        test3();
     }
 
     //list.toArray()
@@ -30,6 +30,13 @@ public class ArraysTest {
         System.out.println(s);  //1  数组发生变化，s没有感知
         System.out.println(array[1]);  //3
 
+    }
+
+    //测试Arrays.sort() Arrays.toString()
+    private static void test3() {
+        String[] arr = new String[]{"abd", "ced", "234"};
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));  //[234, abd, ced]
     }
 
 }

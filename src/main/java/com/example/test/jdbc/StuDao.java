@@ -1,4 +1,4 @@
-package com.example.test.java;
+package com.example.test.jdbc;
 
 import java.util.Date;
 import java.util.List;
