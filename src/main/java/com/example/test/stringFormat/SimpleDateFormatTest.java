@@ -1,4 +1,4 @@
-package com.example.test.java;
+package com.example.test.stringFormat;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

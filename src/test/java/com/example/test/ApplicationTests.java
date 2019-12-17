@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.text.ParseException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -17,7 +16,7 @@ public class ApplicationTests {
 	private StuDao stuDao;
 
 	@Test
-	public void contextLoads() throws ParseException {
+	public void contextLoads()  {
 		StuDTO stu = new StuDTO("wangwu");
 		stuDao.insert(stu);
 		System.out.println(stu.getId());

@@ -1,6 +1,7 @@
 package com.example.test.springMVC;
 
 import com.example.test.springMVC.vo.*;
+import com.example.test.springMVC.vo.AdminVO;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
@@ -117,5 +118,12 @@ public class TestController {
     }
 
     //TODO: 借助自定义Formatter或者Converter实现类进行全局类型转换
+
+
+    //@PathVariable : 从url中获取数据
+    @GetMapping(path = "subject/{subjectId}")
+    public String subject(@PathVariable("subjectId") String subjectId) {
+        return "This is a get method , subjectId: "+subjectId;
+    }
 
 }
