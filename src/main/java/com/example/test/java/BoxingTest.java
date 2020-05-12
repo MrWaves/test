@@ -10,21 +10,27 @@ public class BoxingTest {
         test3();
     }
 
-    //封装对象和原始数据进行比较，
+    /*
+     * 封装对象和原始数据进行比较时，会自动开箱后再比较数值
+     */
     private static void test1(){
         int a=11;
-        Integer b=11;  //autoboxing
-        System.out.println(a==b);  //unboxing后比较大小  true
+        // autoboxing
+        Integer b=11;
+        System.out.println(a==b);  // true
     }
 
-    //-128~127会被提前缓存到IntegerCache的cache[]中
+    /*
+     * 值为-128~127的Integer在容器启动时就被缓存到IntegerCache的缓存中了
+     */
     private static void test2(){
-        Integer a=11,b=11;  //autoboxing，a b指向同一对象
-        System.out.println(a==b);  //true
+        Integer a=11,b=11;
+        System.out.println(a==b);  // true
     }
 
     private static void test3(){
-        Integer a=1111,b=1111;  //autoboxing, a b指向不同对象
-        System.out.println(a==b);  //false
+        // autoboxing, a b指向不同对象
+        Integer a=1111,b=1111;
+        System.out.println(a==b);  // false
     }
 }

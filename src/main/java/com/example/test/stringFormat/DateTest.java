@@ -7,8 +7,13 @@ public class DateTest {
         test1();
     }
 
-    //昨天日期
     private static void test1() {
-        System.out.println(String.format("%tF",new Date(System.currentTimeMillis()-(long)24*3600*1000)));
+        String date = String.format("%tF", new Date(System.currentTimeMillis() - (long) 24 * 3600 * 1000));
+        System.out.println(date);  // 2020-04-18
+    }
+
+    private static void test2(){
+        String date = String.format("%tF %<tT",new Date());
+        System.out.println(date);  // 2020-04-19 18:31:09
     }
 }

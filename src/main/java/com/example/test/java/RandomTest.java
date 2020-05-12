@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @Author: bo.wang
  * @Date: 2017/12/21
- * @Project: test
+ * @Project:
  */
 public class RandomTest {
     public static void main(String[] args) {
@@ -16,7 +16,8 @@ public class RandomTest {
 
     private static void test1() {
         Random random = new Random();
-        int i = random.nextInt(1);
+        // 0~9
+        int i = random.nextInt(10);
         System.out.println(i);
     }
 }

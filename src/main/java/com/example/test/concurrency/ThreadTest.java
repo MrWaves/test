@@ -1,24 +1,26 @@
 package com.example.test.concurrency;
 
+import lombok.SneakyThrows;
+
 public class ThreadTest {
     public static void main(String[] args) throws InterruptedException {
         test2();
     }
 
-    //thread.join()
+    /*
+     * thread.join()
+     */
     private static void test1() throws InterruptedException {
         System.out.println(Thread.currentThread().getName()+" start.");
         Thread thread = new Thread(new Runnable() {
+
             @Override
+            @SneakyThrows
             public void run() {
                 System.out.println(Thread.currentThread().getName() + " start.");
-                try {
-                    for (int i=0;i<5;i++){
-                        System.out.println(Thread.currentThread().getName() + " loop "+i);
-                        Thread.sleep(1000);
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                for (int i=0;i<5;i++){
+                    System.out.println(Thread.currentThread().getName() + " loop "+i);
+                    Thread.sleep(1000);
                 }
                 System.out.println(Thread.currentThread().getName() + " end.");
             }
@@ -28,7 +30,9 @@ public class ThreadTest {
         System.out.println(Thread.currentThread().getName()+" end.");
     }
 
-    //thread.yield()
+    /*
+     * thread.yield()
+     */
     private static void test2() throws InterruptedException {
         System.out.println(Thread.currentThread().getName()+" start.");
         Thread thread = new Thread(new Runnable() {

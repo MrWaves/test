@@ -1,27 +1,31 @@
 package com.example.test.collection;
 
-import com.example.test.jdbc.StuDTO;
+
+import com.example.test.java.Student;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
- * @Author: bo.wang
- * @Date: 2017/12/12
- * @Project: test
+ * @author: bo.wang
+ * @date: 2017/12/12
+ * @project: test
  */
 public class ListTest {
     public static void main(String[] args) {
-        test3();
+        test1();
     }
 
-    //测试 remove() add()方法
+    /*
+     * remove() add()方法
+     */
     private static void test1() {
         List<String> list = new ArrayList<>(Arrays.asList("a","b"));
-        System.out.println(list.toString());
+        System.out.println(list.toString());  // [a, b]
         list.remove("a");
-        System.out.println(list.toString());
+        System.out.println(list.toString());  // [b]
         list.add("a");
-        System.out.println(list.toString());
+        System.out.println(list.toString());  // [b, a]
     }
 
     //测试
@@ -36,8 +40,8 @@ public class ListTest {
 
     //测试 通过引用修改集合元素
     private static void test3() {
-        List<StuDTO> list = new ArrayList();
-        StuDTO stu = new StuDTO("zhangsan");
+        List<Student> list = new ArrayList();
+        Student stu = new Student("zhangsan");
         list.add(stu);
         System.out.println(list.toString());
         stu.setName("lisi");
@@ -63,6 +67,30 @@ public class ListTest {
         List list = new ArrayList();
         list.addAll(null);
         System.out.println(list.size());
+    }
+
+
+    //list.remove()
+    private static void test7(){
+        List<String> list = Arrays.asList("天堂", "地狱","人间");
+        list.remove("天堂");   //Exception in thread "main" java.lang.UnsupportedOperationException
+        System.out.println(list.toString());
+    }
+
+    //Arrays.stream(array).sorted().collect(Collectors.toList())   str.split()  String.join(" ",list)
+    private static void test8() {
+        String string="i am student";
+        String[] arr = string.split(" ");
+        List<String> collect = Arrays.stream(arr).sorted((a, b) -> {
+            if (a.length()>b.length())
+                return -1;
+            if (a.length()<b.length())
+                return 1;
+            return 0;
+
+        }).collect(Collectors.toList());
+        System.out.println(String.join(" ",collect));
+
     }
 
 }

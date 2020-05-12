@@ -1,7 +1,6 @@
 package com.example.test.collection;
 
-import com.example.test.springMVC.vo.UserVO;
-
+import com.example.test.collection.entity.User;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,11 +14,10 @@ public class SetTest {
         test1();
     }
 
-    //@Data相当于@Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode
     private static void test1() {
-        Set<UserVO> set = new HashSet<>();
-        set.add(new UserVO(15, "aaa"));
-        set.add(new UserVO(15, "aaa"));
-        System.out.println(set.toString());   //[UserVO(age=15, name=aaa)]
+        Set<User> users = new HashSet<>();
+        users.add(new User(1L,"Jack"));
+        users.add(new User(1L,"Jack"));
+        System.out.println(users.toString());   //[User(id=1, name=Jack)]
     }
 }

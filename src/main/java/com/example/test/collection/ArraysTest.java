@@ -1,6 +1,5 @@
 package com.example.test.collection;
 
-import org.json.JSONArray;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,21 +21,26 @@ public class ArraysTest {
         System.out.println(arr[0]);  //b
     }
 
-    //数组元素是值传递
+    /*
+     * 数组元素是值传递(复制)
+     */
     private static void test2() {
-      Long[] array={0l,1l,2l};
+        Long[] array={0L,1L,2L};
         Long s = array[1];
-        array[1]=3l;
-        System.out.println(s);  //1  数组发生变化，s没有感知
-        System.out.println(array[1]);  //3
+        array[1]=3L;
+        System.out.println(s);  // 1: 数组发生变化，s没有感知
+        System.out.println(array[1]);  // 3
 
     }
 
-    //测试Arrays.sort() Arrays.toString()
+    /*
+     * Arrays.sort()
+     * Arrays.toString()
+     */
     private static void test3() {
         String[] arr = new String[]{"abd", "ced", "234"};
         Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));  //[234, abd, ced]
+        System.out.println(Arrays.toString(arr));  // [234, abd, ced]
     }
 
 }

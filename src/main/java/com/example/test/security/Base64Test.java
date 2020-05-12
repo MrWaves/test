@@ -3,7 +3,6 @@ package com.example.test.security;
 import org.apache.commons.codec.binary.Base64;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
-
 import java.io.IOException;
 
 /**
@@ -18,7 +17,7 @@ public class Base64Test {
     public static void main(String[] args) throws IOException{
 //      jdkBase64();
 //        CCBase64();
-        BCBase64();
+//        BCBase64();
     }
 
     private static void jdkBase64() throws IOException {
@@ -37,10 +36,10 @@ public class Base64Test {
         System.out.println(new String(src));
     }
 
-    private static void BCBase64() {
-        byte[] encodeBytes = org.bouncycastle.util.encoders.Base64.encode(src.getBytes());
-        byte[] srcBytes = org.bouncycastle.util.encoders.Base64.decode(encodeBytes);
-        System.out.println(new String(encodeBytes));
-        System.out.println(new String(srcBytes));
-    }
+//    private static void BCBase64() {
+//        byte[] encodeBytes = org.bouncycastle.util.encoders.Base64.encode(src.getBytes());
+//        byte[] srcBytes = org.bouncycastle.util.encoders.Base64.decode(encodeBytes);
+//        System.out.println(new String(encodeBytes));
+//        System.out.println(new String(srcBytes));
+//    }
 }

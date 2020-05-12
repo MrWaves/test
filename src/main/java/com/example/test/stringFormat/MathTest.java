@@ -5,7 +5,7 @@ public class MathTest {
         test1();
     }
 
-    //求算数平方根
+    // 求算数平方根，结果保留两位小数
     private static void test1() {
         double sqrt = Math.sqrt(10);
         System.out.println(String.format("%.2f",sqrt));

@@ -10,13 +10,24 @@ import java.math.BigDecimal;
 
 public class BigDecimalTest {
     public static void main(String[] args) {
-        test();
+        test2();
     }
 
-    private static void test() {
-        BigDecimal a = new BigDecimal(0);
-        a=a.add(new BigDecimal("2.5"));  //0+2.5=2.5
-        System.out.println(a);
+    /*
+     * null
+     */
+    private static void test1() {
+        Integer a = null;
+        BigDecimal b = new BigDecimal(a);
+        System.out.println(a);  // NullPointerException
+    }
 
+    /*
+     * add
+     */
+    private static void test2() {
+        BigDecimal a = new BigDecimal("0.00");
+        a = a.add(new BigDecimal("2.45"));
+        System.out.println(a);  // 2.45
     }
 }

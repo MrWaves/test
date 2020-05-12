@@ -10,7 +10,9 @@ public class AtomicTest {
         test1();
     }
 
-    //AtomicInteger 多线程有序自增
+    /*
+     * 4线程有序自增
+     */
     private static void test1() {
         for (int j=0;j<4;j++) {
             new Thread(new Runnable() {

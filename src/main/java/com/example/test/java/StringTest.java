@@ -14,25 +14,34 @@ import java.util.stream.Collectors;
  */
 public class StringTest {
     public static void main(String[] args) {
-        test8();
+        test1();
     }
 
-    //string.split()
+    /*
+     * str.split()
+     */
     private static void test1(){
-        String str = "a b c";
-        String[] arr = str.split(" ");
-        List<String> list = Arrays.asList(arr);
-        System.out.println(list.toString());
+        String str1 = "";
+        List<String> list1 = Arrays.asList(str1.split(","));
+        System.out.println(list1.toString());  // []
+
+        String str2 = null;
+        List<String> list2 = Arrays.asList(str2.split(","));
+        System.out.println(list2.toString());  // java.lang.NullPointerException
     }
 
-    //集String.join("",list)
+    /*
+     * String.join(",",list)
+     */
     private static void test2(){
         List<String> list = Arrays.asList("a", "b", "c");
         String str = String.join(",", list);
         System.out.println(str);
     }
 
-    //String.format()
+    /*
+     * String.format()
+     */
     private static void test3() {
         // %d: int转换符    05:5位整数，不足位用0补齐
         String str1 = String.format("%05d", 39);
@@ -54,33 +63,11 @@ public class StringTest {
         List<String> list=new ArrayList<>();
 //        list.add("a");
 //        list.add("b");
-        String str = String.join("、", list);
+        String str = String.join(",", list);
         System.out.println(str.equals(""));
 
     }
 
-    //list.remove()
-    private static void test5(){
-        List<String> list = Arrays.asList("天堂", "地狱","人间");
-        list.remove("天堂");   //Exception in thread "main" java.lang.UnsupportedOperationException
-        System.out.println(list.toString());
-    }
-
-    //Arrays.stream(array).sorted().collect(Collectors.toList())   str.split()  String.join(" ",list)
-    private static void test6() {
-        String string="i am student";
-        String[] arr = string.split(" ");
-        List<String> collect = Arrays.stream(arr).sorted((a, b) -> {
-            if (a.length()>b.length())
-                return -1;
-            if (a.length()<b.length())
-                return 1;
-            return 0;
-
-        }).collect(Collectors.toList());
-        System.out.println(String.join(" ",collect));
-
-    }
 
     //string.intern()
     private static void test7() {

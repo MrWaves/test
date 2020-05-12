@@ -8,13 +8,14 @@ public class StreamTest {
         test1();
     }
 
-    //列表重排序
-    //collection.stream().sort().forEach()
+    /*
+     * 列表重排序
+     * collection.stream().sort().forEach()
+     */
     private static void test1() {
         List<String> list = Arrays.asList("c","d","a", "b", "c");
         list.stream().sorted((a,b)->{
             return a.compareTo(b);
         }).forEach(System.out::println);
-
     }
 }
